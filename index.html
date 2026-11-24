@@ -86,8 +86,8 @@
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" href="/icon.png" />
     <link rel="apple-touch-icon" href="/icon.png" />
-    <script type="module" crossorigin src="/assets/index-Dc020x_b.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CA2QbF-5.css">
+    <script type="module" crossorigin src="/assets/index-BApiXJHe.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BSQXrFjx.css">
   </head>
   <body>
     <div class="grain" aria-hidden="true"></div>
@@ -99,7 +99,7 @@
         <img class="brand-logo" src="/logo-nav.png" alt="Dreamwalls Paints" width="320" height="163" />
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#range">Range</a>
+        <a href="#products">Products</a>
         <a href="#shades">Shades</a>
         <a href="#systems">Systems</a>
         <a href="#calculator">Calculator</a>
@@ -446,6 +446,31 @@
           </ul>
           <p class="shelf-hint">Tap a pack for coverage, dilution, drying times and the full application cycle.</p>
         </div>
+      </section>
+
+      <!-- CATALOGUE -->
+      <section class="section catalogue" id="products">
+        <div class="section-head light">
+          <p class="eyebrow reveal">Product catalogue</p>
+          <h2 class="display reveal">Every coat in the stack.<br /><span class="thin">Sorted how painters buy it.</span></h2>
+          <p class="section-lede reveal">
+            Putty, primers, emulsions and finishes — grouped by what they do to a wall, not by
+            shelf talk. Open any product for its advantages, features and the technical detail
+            behind it.
+          </p>
+        </div>
+
+        <div class="cat-bar" id="catalogueCats" role="group" aria-label="Filter the catalogue by category"></div>
+
+        <p class="visually-hidden" id="catalogueStatus" role="status"></p>
+
+        <div class="cat-groups" id="catalogueBody"></div>
+
+        <p class="cat-note reveal">
+          Fifteen core products of the 43-finish range are shown here. The full range sheet, pack
+          sizes and current prices come from your Dreamwalls dealer — technical figures on the tin
+          and the data sheet are final.
+        </p>
       </section>
 
       <!-- SHADE STUDIO -->
@@ -1090,7 +1115,7 @@
           <img src="/logo-reverse.png" alt="Dreamwalls Paints — Infinite Shades For Life" width="310" height="179" />
         </div>
         <nav aria-label="Footer">
-          <a href="#range">Products</a>
+          <a href="#products">Products</a>
           <a href="#shades">Shade studio</a>
           <a href="#systems">System builder</a>
           <a href="#calculator">Paint calculator</a>
@@ -1125,16 +1150,37 @@
     <div class="sheet" id="productSheet" role="dialog" aria-modal="true" aria-labelledby="sheetName" hidden>
       <button class="sheet-close" aria-label="Close technical sheet">&times;</button>
       <div class="sheet-panel" tabindex="-1">
+        <div class="sheet-media" id="sheetMedia" hidden>
+          <img id="sheetMediaImg" alt="" />
+        </div>
         <p class="sheet-kicker" id="sheetFamily"></p>
         <h3 id="sheetName">Product</h3>
         <p class="sheet-use" id="sheetUse"></p>
 
-        <dl class="sheet-specs" id="sheetSpecs"></dl>
+        <div class="sheet-block" id="sheetAdvantages">
+          <p class="sheet-label">Advantages</p>
+          <ul class="sheet-list" id="sheetAdvList"></ul>
+        </div>
 
-        <div class="sheet-cycle">
-          <p class="sheet-cycle-label">Application cycle</p>
+        <div class="sheet-block" id="sheetFeatures">
+          <p class="sheet-label">Features</p>
+          <ul class="sheet-list sheet-list-dots" id="sheetFeatList"></ul>
+        </div>
+
+        <div class="sheet-block" id="sheetInfo">
+          <p class="sheet-label">Information</p>
+          <dl class="sheet-specs" id="sheetSpecs"></dl>
+        </div>
+
+        <div class="sheet-block sheet-cycle" id="sheetCycleBlock">
+          <p class="sheet-label">Application cycle</p>
           <ol id="sheetCycle"></ol>
         </div>
+
+        <p class="sheet-note" id="sheetDataNote" hidden>
+          Coverage, drying times and pack sizes for this product are confirmed on the tin and the
+          technical data sheet — ask your Dreamwalls dealer or message us for a copy.
+        </p>
 
         <p class="sheet-note">
           Planning figures for typical Indian plaster at around 30 °C. Substrate, colour depth
